@@ -130,6 +130,7 @@ void drawCircle(int x, int y, int radius, int size,int joint_num, float r,float 
 	glEnd();
 }
 
+
 void drawFilledCircle(GLfloat x, GLfloat y, GLfloat radius){
 	int i;
 	int triangleAmount = 20;
@@ -155,44 +156,44 @@ void resetSelected(){
 
 void rotationHandler(unsigned char key){
 	if (figure.selected_joint[5] == 1){
-		if (key == 'z') figure.rotation_torso += rotation_alpha;
-		else if (key == 'a') figure.rotation_torso -= rotation_alpha;
+		if ((key == 'z') || (key == 'Z')) figure.rotation_torso += rotation_alpha;
+		else if ((key == 'a') || (key == 'A')) figure.rotation_torso -= rotation_alpha;
 	}
 	if (figure.selected_joint[4] == 1){
-		if (key == 'z') figure.rotation_head += rotation_alpha;
-		else if (key == 'a') figure.rotation_head -= rotation_alpha;
+		if ((key == 'z') || (key == 'Z')) figure.rotation_head += rotation_alpha;
+		else if ((key == 'a') || (key == 'A')) figure.rotation_head -= rotation_alpha;
 	}
 	if (figure.selected_joint[3] == 1){
-		if (key == 'z') figure.rotation_left_arm += rotation_alpha;
-		else if (key == 'a') figure.rotation_left_arm -= rotation_alpha;
-		else if (key == 's') figure.rotation_left_forearm -= rotation_alpha;
-		else if (key == 'x') figure.rotation_left_forearm += rotation_alpha;
-		else if (key == 'd') figure.rotation_left_hand -= rotation_alpha;
-		else if (key == 'c') figure.rotation_left_hand += rotation_alpha;
+		if ((key == 'z') || (key == 'Z')) figure.rotation_left_arm += rotation_alpha;
+		else if ((key == 'a') || (key == 'A')) figure.rotation_left_arm -= rotation_alpha;
+		else if ((key == 's') || (key == 'S')) figure.rotation_left_forearm -= rotation_alpha;
+		else if ((key == 'x') || (key == 'X')) figure.rotation_left_forearm += rotation_alpha;
+		else if ((key == 'd') || (key == 'D')) figure.rotation_left_hand -= rotation_alpha;
+		else if ((key == 'c') || (key == 'C')) figure.rotation_left_hand += rotation_alpha;
 	}
 	if (figure.selected_joint[2] == 1){
-		if (key == 'z') figure.rotation_right_arm += rotation_alpha;
-		else if (key == 'a') figure.rotation_right_arm -= rotation_alpha;
-		else if (key == 's') figure.rotation_right_forearm -= rotation_alpha;
-		else if (key == 'x') figure.rotation_right_forearm += rotation_alpha;
-		else if (key == 'd') figure.rotation_right_hand -= rotation_alpha;
-		else if (key == 'c') figure.rotation_right_hand += rotation_alpha;
+		if ((key == 'z') || (key == 'Z')) figure.rotation_right_arm += rotation_alpha;
+		else if ((key == 'a') || (key == 'A')) figure.rotation_right_arm -= rotation_alpha;
+		else if ((key == 's') || (key == 'S')) figure.rotation_right_forearm -= rotation_alpha;
+		else if ((key == 'x') || (key == 'X')) figure.rotation_right_forearm += rotation_alpha;
+		else if ((key == 'd') || (key == 'D')) figure.rotation_right_hand -= rotation_alpha;
+		else if ((key == 'c') || (key == 'C')) figure.rotation_right_hand += rotation_alpha;
 	}
 	if (figure.selected_joint[1] == 1){
-		if (key == 'z') figure.rotation_left_leg += rotation_alpha;
-		else if (key == 'a') figure.rotation_left_leg -= rotation_alpha;
-		else if (key == 's') figure.rotation_left_calve -= rotation_alpha;
-		else if (key == 'x') figure.rotation_left_calve += rotation_alpha;
-		else if (key == 'd') figure.rotation_left_foot -= rotation_alpha;
-		else if (key == 'c') figure.rotation_left_foot += rotation_alpha;
+		if ((key == 'z') || (key == 'Z')) figure.rotation_left_leg += rotation_alpha;
+		else if ((key == 'a') || (key == 'A')) figure.rotation_left_leg -= rotation_alpha;
+		else if ((key == 's') || (key == 'S')) figure.rotation_left_calve -= rotation_alpha;
+		else if ((key == 'x') || (key == 'X')) figure.rotation_left_calve += rotation_alpha;
+		else if ((key == 'd') || (key == 'D')) figure.rotation_left_foot -= rotation_alpha;
+		else if ((key == 'c') || (key == 'C')) figure.rotation_left_foot += rotation_alpha;
 	}
 	if (figure.selected_joint[0] == 1){
-		if (key == 'z') figure.rotation_right_leg += rotation_alpha;
-		else if (key == 'a') figure.rotation_right_leg -= rotation_alpha;
-		else if (key == 's') figure.rotation_right_calve -= rotation_alpha;
-		else if (key == 'x') figure.rotation_right_calve += rotation_alpha;
-		else if (key == 'd') figure.rotation_right_foot -= rotation_alpha;
-		else if (key == 'c') figure.rotation_right_foot += rotation_alpha;
+		if ((key == 'z') || (key == 'Z')) figure.rotation_right_leg += rotation_alpha;
+		else if ((key == 'a') || (key == 'A')) figure.rotation_right_leg -= rotation_alpha;
+		else if ((key == 's') || (key == 'S')) figure.rotation_right_calve -= rotation_alpha;
+		else if ((key == 'x') || (key == 'X')) figure.rotation_right_calve += rotation_alpha;
+		else if ((key == 'd') || (key == 'D')) figure.rotation_right_foot -= rotation_alpha;
+		else if ((key == 'c') || (key == 'C')) figure.rotation_right_foot += rotation_alpha;
 	}
 
 }
@@ -237,6 +238,12 @@ void keyPressed (unsigned char key, int x, int y) {
 		case 'x':
 		case 'd':
 		case 'c':
+		case 'A':
+		case 'Z':
+		case 'S':
+		case 'X':
+		case 'D':
+		case 'C':
 			rotationHandler(key);
 			break;
 		default:
